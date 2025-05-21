@@ -325,7 +325,7 @@ export function CampaignForm({ campaignType, campaignLink, clankerTokenDetails }
                   <Calendar
                     mode="single"
                     selected={formData.startDate || undefined}
-                    onSelect={(date) => handleDateSelect("startDate", date)}
+                    onSelect={(date) => handleDateSelect("startDate", date ?? null)}
                     initialFocus
                   />
                 </PopoverContent>
@@ -349,7 +349,7 @@ export function CampaignForm({ campaignType, campaignLink, clankerTokenDetails }
                   <Calendar
                     mode="single"
                     selected={formData.endDate || undefined}
-                    onSelect={(date) => handleDateSelect("endDate", date)}
+                    onSelect={(date) => handleDateSelect("endDate", date ?? null)}
                     disabled={(date) => (formData.startDate ? date < formData.startDate : false) || date < new Date()}
                     initialFocus
                   />
